@@ -3,7 +3,8 @@
  * _pow_recursion - power
  * @x:int
  * @y:int
- * return:int
+ *
+ * return: -1 if y<0,else return value of x
  */
 
 int _pow_recursion(int x, int y)
