@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * main -prints the programme name
+ * main - prints the programme name
  *@argc:the numbers for arguments
  *@argv:the arry for arguments
+ *Return: 0
  */
 
 int main(int __attribute__((__unused__)) argc, char *argv[]);
