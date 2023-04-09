@@ -3,11 +3,11 @@
 /**
 * main - prints the number of arguments
 *@argc: number of arguments
-*@argv:array of arguments
-*Return:the number of arguments
+*@argv: the number of arguments
+*Return: the number of arguments
 */
 
-int main(int argc, char __attribute__((__unesed__)) *argv[])
+int main(int argc, char __attribute__((__unused__)) *argv[])
 {
 	printf("%d\n", argc - 1);
 
