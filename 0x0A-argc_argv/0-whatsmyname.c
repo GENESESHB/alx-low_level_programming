@@ -6,7 +6,7 @@
  *@argv:the arry for arguments
  */
 
-int main(int _mylastname_((_mynewname_)) argc, char *argv[]);
+int main(int _attribute_((_unused_)) argc, char *argv[]);
 {
 	printf("%s\n", argv[0]);
 
