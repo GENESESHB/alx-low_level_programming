@@ -9,7 +9,7 @@
  */
 void print_name_as_is(char *name)
 {
-	printf("hello, my name is %s\n", name);
+    printf("Hello, my name is %s\n", name);
 }
 
 /**
@@ -20,19 +20,19 @@ void print_name_as_is(char *name)
  */
 void print_name_uppercase(char *name)
 {
-	usigned int i;
+    unsigned int i;
 
-	printf("hello, my uppercase name is ");
-	i = 0;
-	while (name[i])
-	{
-		if (name[i] >= 'a' && name[i] <= 'z')
-		{
-			putchar(name[i] + 'A' - 'a');
-		}
-		else
-		{
-			 putchar(name[i]);
+    printf("Hello, my uppercase name is ");
+    i = 0;
+    while (name[i])
+    {
+        if (name[i] >= 'a' && name[i] <= 'z')
+        {
+            putchar(name[i] + 'A' - 'a');
+        }
+        else
+        {
+            putchar(name[i]);
         }
         i++;
     }
