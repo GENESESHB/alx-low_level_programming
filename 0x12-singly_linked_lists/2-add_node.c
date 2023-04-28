@@ -3,9 +3,9 @@
 #include <string.h>
 
 /**
- * add_node - Adds a new node at the beginning of a list_t list
- * @head: Pointer to a pointer to the head of the list
- * @str: String to be added to the new node
+ * add_node - Adds a new node at the beginning of a list_t to list
+ * @head: Pointer to a pointer to the head in the lists
+ * @str: String pour que je soit dans une novelle node
  *
  * Return: Address of the new element, or NULL if it failed
  */
