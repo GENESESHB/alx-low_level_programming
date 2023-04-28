@@ -1,19 +1,18 @@
 section .data
-hello db 'Hello, Holberton', 0xA, 0
+    hello db "Hello, Holberton", 10 ; 10 is the ASCII code for newline
 
 section .text
-global main
+    global main
+    extern printf
 
-extern printf
+    main:
+        push rbp
+        mov rbp, rsp
 
-main:
-push rbp
-mov rbp, rsp
+        mov edi, hello
+        xor eax, eax
+        call printf
 
-mov rdi, hello
-xor rax, rax
-call printf
-
-xor eax, eax
-pop rbp
-ret
+        mov eax, 0
+        leave
+        ret
