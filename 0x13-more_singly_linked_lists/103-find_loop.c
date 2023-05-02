@@ -9,27 +9,27 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *hassan, *boudraa;
+	listint_t *has, *boud;
 
-	hassan = head;
-	boudraa = head;
+	has = head;
+	boud = head;
 
-	while (hassan != NULL && boudraa != NULL && boudraa->next != NULL)
+	while (has != NULL && boud != NULL && boud->next != NULL)
 	{
-		hassan = hassan->next;
-		boudraa = boudraa->next->next;
+		has = has->next;
+		boud = boud->next->next;
 
-		if (hassan == boudraa)
+		if (has == boud)
 		{
-			hassan = head;
+			has = head;
 
-			while (hassan != boudraa)
+			while (has != boud)
 			{
-				hassan = hassan->next;
-				boudraa = boudraa->next;
+				has = has->next;
+				boud = boud->next;
 			}
 
-			return (hassan);
+			return (has);
 		}
 	}
 	return (NULL);
