@@ -9,35 +9,28 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-    listint_t *hassan, *boudraa;
+	listint_t *hassan, *boudraa;
 
-    hassan = head;
-    boudraa = head;
+	hassan = head;
+	boudraa = head;
 
-    while (hassan != NULL && boudraa != NULL && boudraa->next != NULL)
-    {
-        hassan = hassan->next;
-        boudraa = boudraa->next->next;
+	while (hassan != NULL && boudraa != NULL && boudraa->next != NULL)
+	{
+		hassan = hassan->next;
+		boudraa = boudraa->next->next;
 
-        if (hassan == boudraa)
-        {
-            /* A loop is detected */
+		if (hassan == boudraa)
+		{
+			hassan = head;
 
-            /* Move hassan to head */
-            hassan = head;
+			while (hassan != boudraa)
+			{
+				hassan = hassan->next;
+				boudraa = boudraa->next;
+			}
 
-            /* Iterate over linked list */
-            while (hassan != boudraa)
-            {
-                hassan = hassan->next;
-                boudraa = boudraa->next;
-            }
-
-            /* They meet at the start of the loop */
-            return hassan;
-        }
-    }
-
-    /* No loop */
-    return NULL;
+			return (hassan);
+		}
+	}
+	return (NULL);
 }
