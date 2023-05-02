@@ -1,34 +1,43 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - adds a node at the end of a linked list
- * @head: pointer to the first element in the list
- * @n: data to insert in the new element
+ * find_listint_loop - finds the loop in a linked list
+ * @head: pointer to the head of the linked list
  *
- * Return: pointer to the new node, or NULL if it fails
+ * Return: The address of the node where the loop starts,
+ * or NULL if there is no loop
  */
-listint_t *add_nodeint_end(listint_t **head, const int n)
+listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *jdida;
-	listint_t *tp = *head;
+    listint_t *hassan, *boudraa;
 
-	jdida = malloc(sizeof(listint_t));
-	if (!jdida)
-		return (NULL);
+    hassan = head;
+    boudraa = head;
 
-	jdida->n = n;
-	jdida->next = NULL;
+    while (hassan != NULL && boudraa != NULL && boudraa->next != NULL)
+    {
+        hassan = hassan->next;
+        boudraa = boudraa->next->next;
 
-	if (*head == NULL)
-	{
-		*head = jdida;
-		return (jdida);
-	}
+        if (hassan == boudraa)
+        {
+            /* A loop is detected */
 
-	while (tp->next)
-		tp = tp->next;
+            /* Move hassan to head */
+            hassan = head;
 
-	tp->next = jdida;
+            /* Iterate over linked list */
+            while (hassan != boudraa)
+            {
+                hassan = hassan->next;
+                boudraa = boudraa->next;
+            }
 
-	return (jdida);
+            /* They meet at the start of the loop */
+            return hassan;
+        }
+    }
+
+    /* No loop */
+    return NULL;
 }
