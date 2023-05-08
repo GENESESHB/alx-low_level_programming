@@ -1,24 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * main - check the code
+ * read_textfile - a function that reads a text file
+ * and prints it to the POSIX standard output
+ * @filename: name of file
+ * @letters: the number of letters to be printed
  *
- * Return: Always 0.
+ * Return: 1 for success 0 for failure
  */
-int main(int ac, char **av)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-    ssize_t n;
+	int fp;
+	ssize_t nrd, nwr;
+	char *buf;
 
-    if (ac != 2)
-    {
-        dprintf(2, "Usage: %s filename\n", av[0]);
-        exit(1);
-    }
-    n = read_textfile(av[1], 114);
-    printf("\n(printed chars: %li)\n", n);
-    n = read_textfile(av[1], 1024);
-    printf("\n(printed chars: %li)\n", n);
-    return (0);
+	if (!filename)
+		return (0);
+	fp = open(filename, O_RDONLY);
+	if (fp == -1)
+		return (0);
+	buf = malloc(sizeof(char) * (letters));
+	if (!buf)
+		return (0);
+
+	nrd = read(fp, buf, letters);
+	nwr = write(STDOUT_FILENO, buf, nrd);
+
+	close(fp);
+
+	free(buf);
+
+	return (nwr);
 }
