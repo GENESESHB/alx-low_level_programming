@@ -3,4 +3,63 @@
 for this projrct it s very simple  it s like a store some data in computr 
 in this project we have creat the arry for management or organisation my data 
 and i have creat a name of my datra its a variyables 
-and  
+and  ...
+
+/* tasks 0 */ 
+explining this code steep by steep 
+
+1- #include "hash_tables.h"
+it s for incloding the header file and the librairies 
+and prototype of function and data struct 
+
+2- #:hash_table_t *hash_table_create(unsigned long int size)
+This line defines the function hash_table_create that takes an unsigned long integer size as a parameter
+ and returns a pointer to a hash_table_t structure.
+ This function is responsible for creating a hash table.
+
+
+3- #:unsigned int i = 0;
+This line declares and initializes an unsigned integer variable i with the value 0. 
+It will be used as a loop counter.
+
+4- #:hash_table_t *hash_table = malloc(sizeof(hash_table_t));
+This line allocates memory for a hash_table_t structure using malloc. 
+The size of the allocated memory is determined by sizeof(hash_table_t). 
+The allocated memory will store the hash table structure. 
+If the allocation fails, NULL is returned.
+
+4- #:if (hash_table == NULL)
+        return (NULL);
+
+if the hash_table it s not allocated the memory  return NULL;
+
+
+5- #:hash_table->array = malloc(sizeof(hash_table_t *) *size);
+
+This line allocates memory for an array of pointers to hash_table_t structures.
+ The size of the allocated memory is determined by sizeof(hash_table_t *) * size.
+ The allocated memory will store the elements of the hash table array. If the allocation fails,
+ the previously allocated memory for the hash table structure is freed, and NULL is returned.
+
+6- #:if (hash_table->array == NULL)
+{
+        free(hash_table);
+        return (NULL);
+}
+
+This block of code checks if the memory allocation for the hash table array was successful. If the allocation failed (i.e., hash_table->array is NULL), the previously allocated memory for the hash table structure is freed, and NULL is returned to indicate a failure.
+
+
+7- #hash_table->size = size;
+This line assigns the value of size to the size member of the hash table structure. It indicates the number of elements in the hash table array.
+
+8- #:for (; i < size; i++);
+hash_table->array[i] = NULL;
+
+This block of code initializes all the elements of the hash table array to NULL. It loops from 0 to size - 1 and assigns NULL to each element.
+
+9- #return (hash_table);
+
+
+Finally, this line returns the pointer to the newly created hash table structure. The function has successfully created a hash table with the specified size.
+
