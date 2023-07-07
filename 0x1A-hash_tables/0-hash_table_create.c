@@ -2,7 +2,7 @@
 
 /*
  * hash_tables_create - create a hash tables .
- * @size: the size of array 
+ * @size: the size of array
  *
  * Return: A pointer the nEw hash tables created or | NULL for faild progress
  */
@@ -11,10 +11,11 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	unsigned int i = 0;
 	hash_table_t *hash_table = malloc(sizeof(hash_table_t));
+
 	if (hash_table == NULL)
 		return (NULL);
 
-	hash_table->array = malloc(sizeof(hash_table_t *) *size);
+	hash_table->array = malloc(sizeof(hash_table_t *) * size);
 	if (hash_table->array == NULL)
 	{
 		free(hash_table);
@@ -22,10 +23,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	}
 
 	hash_table->size = size;
-	for (; i < size; i++);
+	
+	for (i = 0; i < size; i++);
+
 	hash_table->array[i] = NULL;
 
-    return (hash_table);
+	return (hash_table);
 }
-
-
