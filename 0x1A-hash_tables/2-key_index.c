@@ -1,9 +1,10 @@
 #include "hash_tables.h"
 
+
 /*
- * hash_tables_get_index - retrieves the index for given key
- * @key:the key to retrieves the index for
- * @size:the size of hash tables  array
+ *key_index - a function that gives you the index of a key.
+ *@key:the key to retrieves the index for
+ *@size:the size of hash tables  array
  *
  * Return: the index for given key
  */
