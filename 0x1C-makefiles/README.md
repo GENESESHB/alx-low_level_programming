@@ -174,19 +174,38 @@ def island_perimeter(grid):
 ```
 
 - These lines calculate the `width` and `height` of the grid (number of columns and rows respectively). They also initialize two variables: `edges` to keep track of adjacent land cells, and `size` to keep track of the total number of land cells.
+Certainly, let's break down the provided code lines step by step:
 
 ```python
-    for i in range(height):  # Loop through each row
-        for j in range(width):  # Loop through each column
-            if grid[i][j] == 1:  # If it's a land cell
-                size += 1
-                if j > 0 and grid[i][j - 1] == 1:  # Check left neighbor
-                    edges += 1
-                if i > 0 and grid[i - 1][j] == 1:  # Check upper neighbor
-                    edges += 1
+for i in range(height):  # Loop through each row
+    for j in range(width):  # Loop through each column
+        if grid[i][j] == 1:  # If it's a land cell
+            size += 1
+            if j > 0 and grid[i][j - 1] == 1:  # Check left neighbor
+                edges += 1
+            if i > 0 and grid[i - 1][j] == 1:  # Check upper neighbor
+                edges += 1
 ```
 
-- These nested loops iterate through each cell in the grid. If the cell represents land (1), the `size` counter is incremented. The code then checks neighboring cells to the left and above the current cell. If those neighboring cells are also land, it means they share an edge, so the `edges` counter is incremented.
+- `for i in range(height):`: This line starts a loop that iterates through each row of the grid. It uses the `range` function to generate values from 0 up to (but not including) `height`. The loop variable `i` represents the current row index.
+
+- `for j in range(width):`: This line starts a nested loop that iterates through each column of the grid. It similarly uses the `range` function with `width` to iterate through columns. The loop variable `j` represents the current column index.
+
+- `if grid[i][j] == 1:`: This line checks if the current cell in the grid (at row `i` and column `j`) contains a value of 1, indicating a land cell.
+
+    - If the condition is met (the cell contains land), the following actions are taken within the indentation block below.
+
+- `size += 1`: This line increments the `size` counter by 1. The `size` counter keeps track of the total number of land cells encountered.
+
+- `if j > 0 and grid[i][j - 1] == 1:`: This line checks if the current cell has a land cell as its left neighbor (previous column). The condition `j > 0` ensures that the current cell is not in the first column.
+
+    - If the condition is met, the `edges` counter is incremented by 1. The `edges` counter keeps track of adjacent land cells that share an edge.
+
+- `if i > 0 and grid[i - 1][j] == 1:`: This line checks if the current cell has a land cell as its upper neighbor (previous row). The condition `i > 0` ensures that the current cell is not in the first row.
+
+    - If the condition is met, the `edges` counter is incremented by 1.
+
+In summary, these lines of code iterate through each cell in the grid and count the total number of land cells (`size`). Additionally, they count the number of shared edges between adjacent land cells (`edges`) by checking left and upper neighbors. This information is used to calculate the perimeter of the island in the `island_perimeter` function.
 
 ```python
     return size * 4 - edges * 2
