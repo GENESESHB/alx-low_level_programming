@@ -1,0 +1,25 @@
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+SRC = main.c file1.c file2.c  # Ajoutez ici la liste de vos fichiers source .c
+OBJ = $(SRC:.c=.o)
+NAME = school
+
+RM = rm -f
+
+.PHONY: all clean oclean fclean re
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME) $(OBJ)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
