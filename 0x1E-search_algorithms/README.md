@@ -4,8 +4,9 @@
 # tasks 🦾
 
 # 0️⃣
-
+``
 Certainly! This code defines a function called `linear_search` that performs a linear search on an array of integers to find a specific value. Here's an explanation of the code:
+``
 
 ```c
 /**
@@ -39,6 +40,7 @@ int linear_search(int *array, size_t size, int value)
     return (-1);
 }
 ```
+``
 
 Explanation:
 
@@ -53,10 +55,12 @@ Explanation:
 5. **Return -1**: If the loop completes without finding the value, the function returns -1, indicating that the value is not present in the array.
 
 The `printf` statement inside the loop is used for debugging purposes to print the elements being checked during the search.
+``
 
 # 1️⃣
-
+``
 This code defines a function called `binary_search` that performs binary search on a sorted array of integers to find a specific value. Here's an explanation of the code:
+``
 
 ```c
 #include "search_algos.h"
@@ -105,7 +109,7 @@ int binary_search(int *array, size_t size, int value)
     return (-1);
 }
 ```
-
+``
 Explanation:
 
 1. **Function Header**: The function `binary_search` is defined with three parameters - a pointer to a sorted array of integers (`array`), the size of the array (`size`), and the value to search for (`value`). The function returns an integer representing the index where the value is found, or -1 if the value is not present in the array.
@@ -121,3 +125,4 @@ Explanation:
 6. **Return -1**: If the loop completes without finding the value, the function returns -1, indicating that the value is not present in the array.
 
 The `printf` statement inside the loop is used for debugging purposes to print the elements being considered during each iteration of the binary search.
+``
