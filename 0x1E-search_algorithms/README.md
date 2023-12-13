@@ -169,7 +169,8 @@ int **allocate_matrix(int n, int m) {
 
 In these examples, the big O notation is used to describe the growth rate of time and space complexity in terms of the input size.`
 
-![holbberton_prjcts](https://images.ctfassets.net/ii9ehdcj88bc/2CC58hnivl0LvIEnCeYB33/f2e9b355bfc243b6c292a8e0191987c9/Black_WordmarkHolberton01-01.png)
+![holbberton_prjcts](https://holberton.anahuacmayab.mx/wp-content/uploads/2022/06/Holberton-Logo-v1.png)
+
 
 #holberton projects 
 0x1E. C - Search Algorithms
