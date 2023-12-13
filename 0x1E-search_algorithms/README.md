@@ -125,4 +125,46 @@ Explanation:
 6. **Return -1**: If the loop completes without finding the value, the function returns -1, indicating that the value is not present in the array.
 
 The `printf` statement inside the loop is used for debugging purposes to print the elements being considered during each iteration of the binary search.
-``
+`
+
+### time & space of Complexity :Definitiion
+Sure, let me provide definitions for time complexity and space complexity along with examples:
+
+### Time Complexity:
+
+**Definition:**
+Time complexity is a measure of the amount of time an algorithm takes to complete as a function of the size of the input. It represents the relationship between the input size and the number of basic operations the algorithm performs.
+
+**Example:**
+Consider a simple linear search algorithm that looks for a specific element in an array. If the size of the array is \(n\), the time complexity of this algorithm is \(O(n)\), meaning the time it takes to run increases linearly with the size of the input array.
+
+```c
+int linear_search(int *array, size_t size, int value) {
+    for (size_t i = 0; i < size; i++) {
+        if (array[i] == value) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+### Space Complexity:
+
+**Definition:**
+Space complexity is a measure of the amount of memory an algorithm uses as a function of the size of the input. It represents the relationship between the input size and the amount of additional memory required by the algorithm.
+
+**Example:**
+Consider an algorithm that creates a 2D array to represent a matrix. If the size of the matrix is \(n \times m\), and the algorithm allocates memory for the entire matrix, the space complexity is \(O(n \times m)\), indicating that the space usage increases with the product of the number of rows and columns.
+
+```c
+int **allocate_matrix(int n, int m) {
+    int **matrix = malloc(sizeof(int *) * n);
+    for (int i = 0; i < n; i++) {
+        matrix[i] = malloc(sizeof(int) * m);
+    }
+    return matrix;
+}
+```
+
+In these examples, the big O notation is used to describe the growth rate of time and space complexity in terms of the input size.`
